@@ -31,4 +31,4 @@ app.post('/uploadfile', uploader.single('myFile'), function (req, res, next) {
 })
 
 
-app.listen(3003)
+app.listen(process.env.port ||3003)
