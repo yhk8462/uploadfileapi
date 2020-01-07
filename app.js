@@ -13,11 +13,11 @@ var myStorage = multer.diskStorage({
     }
 })
 
-
+var cors = require('cors')
 
 var uploader = multer({ storage: myStorage })
 
-
+app.use(cors());
 app.post('/uploadfile', uploader.single('myFile'), function (req, res, next) {
 
     const file = req.file
